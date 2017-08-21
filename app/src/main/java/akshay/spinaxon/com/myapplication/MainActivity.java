@@ -3,13 +3,24 @@ package akshay.spinaxon.com.myapplication;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
+
+import com.akshaykale.swipetimeline.SwipeTimelineFragment;
+import com.akshaykale.swipetimeline.TimeLineConfig;
+import com.akshaykale.swipetimeline.TimeLineObject;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    private SwipeTimelineFragment mFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +37,27 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+            mFragment = new SwipeTimelineFragment();
+
+
+        ArrayList<TimeLineObject> objs = new ArrayList<>();
+
+        objs.add(new TestO(Long.parseLong("1503333719664"),"A"));
+        objs.add(new TestO(Long.parseLong("1354460400000"),"B"));
+        objs.add(new TestO(Long.parseLong("1325516400000"),"C"));
+
+
+        TimeLineConfig.setData(objs, "month");
+            loadFragment(mFragment);
+
+    }
+
+    private void loadFragment(Fragment newFragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, newFragment);
+        //transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     @Override
