@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Android_Timeline.iml" filepath="$PROJECT_DIR$/Android_Timeline.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/swiptimeline/swiptimeline.iml" filepath="$PROJECT_DIR$/swiptimeline/swiptimeline.iml" />
       <module fileurl="file://$PROJECT_DIR$/swiptimeline/swiptimeline.iml" filepath="$PROJECT_DIR$/swiptimeline/swiptimeline.iml" />
     </modules>
   </component>
