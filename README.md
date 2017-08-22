@@ -104,6 +104,9 @@ public class ImageLoad implements ImageLoadingEngine {
 |```TimeLineConfig```<br>```.setTimelineHeaderSize(int size){...}```|Text size of the date header|
 |```TimeLineConfig```<br>```.setTimelineHeaderTextColour(String textColour)```|Set text colour of date header|
 |```TimeLineConfig```<br>```.setTimelineIndicatorBackgroundColour(String textColour){...}```|Change the background colour of Timeline indicator|
+|```TimeLineConfig```<br>```.setTimelineIndicatorLineColour(String textColour){...}```|Chenge the timeline indicator line colour|
+|```TimeLineConfig```<br>```.setTimelineCardTextSize(int size){...}```|Change the text size of timeline card|
+|```TimeLineConfig```<br>```.setTimelineCardTextBackgroundColour(String textColour){...}```|Change the text background colour of card|
 
 
 
