@@ -62,8 +62,9 @@ public class MainActivity extends AppCompatActivity implements TimelineObjectCli
         //Set configurations
         TimeLineConfig.addOnClickListener(this);
         TimeLineConfig.setImageLoadEngine(new ImageLoad(getApplicationContext()));
-        TimeLineConfig.setTimelineCardTextBackgroundColour("#fff000"); //blue color
+        TimeLineConfig.setTimelineCardTextBackgroundColour("#fff000");
 
+        //Load frag after configs and setting the data
         loadFragment(mFragment);
     }
 
