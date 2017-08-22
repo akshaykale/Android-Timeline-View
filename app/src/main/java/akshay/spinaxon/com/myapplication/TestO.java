@@ -1,21 +1,22 @@
 package akshay.spinaxon.com.myapplication;
 
-import com.akshaykale.swipetimeline.TimeLineObject;
+import com.akshaykale.swipetimeline.TimelineObject;
 
 /**
  * Created by akshaykale on 2017/08/22.
  */
 
-public class TestO implements TimeLineObject {
+public class TestO implements TimelineObject {
 
-    public TestO(long timeline, String header) {
+    public TestO(long timeline, String name, String info) {
         this.timeline = timeline;
-        this.header = header;
+        this.name = name;
+        this.info = info;
     }
 
     long timeline;
 
-    String header;
+    String name, info;
 
     @Override
     public long getTimestamp() {
@@ -24,11 +25,11 @@ public class TestO implements TimeLineObject {
 
     @Override
     public String getHeader() {
-        return header;
+        return info;
     }
 
     @Override
-    public String getName() {
-        return null;
+    public String getTitle() {
+        return name;
     }
 }

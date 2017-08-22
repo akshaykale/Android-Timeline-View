@@ -1,8 +1,5 @@
 package com.akshaykale.swipetimeline;
 
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.LayerDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,9 +15,9 @@ import java.util.ArrayList;
 public class HorizontalRecyclerViewAdapter extends RecyclerView.Adapter<HorizontalRecyclerViewAdapter.HorizontalRecyclerViewHolder> {
 
 
-    ArrayList<TimeLineObject> list;
+    ArrayList<TimelineObject> list = new ArrayList<>();
 
-    public HorizontalRecyclerViewAdapter(ArrayList<TimeLineObject> list) {
+    public HorizontalRecyclerViewAdapter(ArrayList<TimelineObject> list) {
         this.list = list;
     }
 
@@ -33,12 +30,14 @@ public class HorizontalRecyclerViewAdapter extends RecyclerView.Adapter<Horizont
 
     @Override
     public void onBindViewHolder(HorizontalRecyclerViewHolder holder, int position) {
-        holder.textView.setText(""+list.get(position).getName());
+        holder.textView.setText(""+list.get(position).getTitle());
 
     }
 
     @Override
     public int getItemCount() {
+        if (list == null)
+            return 0;
         return list.size();
     }
 

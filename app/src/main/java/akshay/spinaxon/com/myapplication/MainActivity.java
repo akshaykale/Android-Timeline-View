@@ -7,14 +7,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
+import android.view.View;
 
 import com.akshaykale.swipetimeline.SwipeTimelineFragment;
 import com.akshaykale.swipetimeline.TimeLineConfig;
-import com.akshaykale.swipetimeline.TimeLineObject;
+import com.akshaykale.swipetimeline.TimelineGroupType;
+import com.akshaykale.swipetimeline.TimelineObject;
 
 import java.util.ArrayList;
 
@@ -38,19 +38,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-            mFragment = new SwipeTimelineFragment();
+        mFragment = new SwipeTimelineFragment();
 
+        ArrayList<TimelineObject> objs = new ArrayList<>();
+        objs.add(new TestO(Long.parseLong("1483196400000"), "A", "INFO"));
+        objs.add(new TestO(Long.parseLong("1483196400000"), "A", "INFO"));
+        objs.add(new TestO(Long.parseLong("1483196400000"), "A", "INFO"));
+        objs.add(new TestO(Long.parseLong("1484146800000"), "B", "INFO"));
+        objs.add(new TestO(Long.parseLong("1485961200000"), "C", "INFO"));
+        objs.add(new TestO(Long.parseLong("1487084400000"), "D", "INFO"));
+        objs.add(new TestO(Long.parseLong("1489244400000"), "E", "INFO"));
+        objs.add(new TestO(Long.parseLong("1491922800000"), "F", "INFO"));
+        objs.add(new TestO(Long.parseLong("1491922800000"), "F", "INFO"));
 
-        ArrayList<TimeLineObject> objs = new ArrayList<>();
-
-        objs.add(new TestO(Long.parseLong("1503333719664"),"A"));
-        objs.add(new TestO(Long.parseLong("1354460400000"),"B"));
-        objs.add(new TestO(Long.parseLong("1325516400000"),"C"));
-
-
-        TimeLineConfig.setData(objs, "month");
-            loadFragment(mFragment);
-
+        TimeLineConfig.setData(objs, TimelineGroupType.MONTH);
+        loadFragment(mFragment);
     }
 
     private void loadFragment(Fragment newFragment) {
