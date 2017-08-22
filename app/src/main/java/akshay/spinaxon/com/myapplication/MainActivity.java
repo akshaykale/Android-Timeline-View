@@ -41,17 +41,17 @@ public class MainActivity extends AppCompatActivity {
         mFragment = new SwipeTimelineFragment();
 
         ArrayList<TimelineObject> objs = new ArrayList<>();
-        objs.add(new TestO(Long.parseLong("1483196400000"), "A", "INFO"));
-        objs.add(new TestO(Long.parseLong("1483196400000"), "A", "INFO"));
-        objs.add(new TestO(Long.parseLong("1483196400000"), "A", "INFO"));
-        objs.add(new TestO(Long.parseLong("1484146800000"), "B", "INFO"));
-        objs.add(new TestO(Long.parseLong("1485961200000"), "C", "INFO"));
-        objs.add(new TestO(Long.parseLong("1487084400000"), "D", "INFO"));
-        objs.add(new TestO(Long.parseLong("1489244400000"), "E", "INFO"));
-        objs.add(new TestO(Long.parseLong("1491922800000"), "F", "INFO"));
-        objs.add(new TestO(Long.parseLong("1491922800000"), "F", "INFO"));
+        objs.add(new TestO(Long.parseLong("1483196400000"), "A"));
+        objs.add(new TestO(Long.parseLong("1483196400000"), "A" ));
+        objs.add(new TestO(Long.parseLong("1483196400000"), "A" ));
+        objs.add(new TestO(Long.parseLong("1484146800000"), "B" ));
+        objs.add(new TestO(Long.parseLong("1485961200000"), "C" ));
+        objs.add(new TestO(Long.parseLong("1487084400000"), "D" ));
+        objs.add(new TestO(Long.parseLong("1489244400000"), "E" ));
+        objs.add(new TestO(Long.parseLong("1491922800000"), "F" ));
+        objs.add(new TestO(Long.parseLong("1491922800000"), "F" ));
 
-        TimeLineConfig.setData(objs, TimelineGroupType.MONTH);
+        TimeLineConfig.setData(objs, TimelineGroupType.DAY);
         loadFragment(mFragment);
     }
 

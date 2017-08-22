@@ -27,8 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#dc252525"
-            android:paddingBottom="5dp"
+
             android:layout_alignParentBottom="true">
 
             <TextView
@@ -39,10 +38,8 @@
                 android:textSize="22sp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_above="@+id/horizontal_card_text_holder_rating"
-                android:textColor="#ffffff"
-                android:paddingLeft="5dp"
-                android:text="Pasta"/>
+                android:text="Textdfds fdgd gdg dgds"
+                android:maxLines="2"/>
 
         </LinearLayout>
 

@@ -5,6 +5,7 @@
     android:orientation="horizontal">
 
     <RelativeLayout
+        android:id="@+id/container_timeline_indicator"
         android:layout_width="30dp"
         android:layout_height="match_parent">
 
@@ -18,6 +19,7 @@
             android:layout_centerHorizontal="true"/>
         
         <TextView
+            android:id="@+id/tv_timeline_indicator_line"
             android:layout_width="2dp"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"

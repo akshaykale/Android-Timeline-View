@@ -70,4 +70,96 @@ public class TimeLineConfig {
 
     }
 
+
+    /**
+    * Timeline header text size
+    * */
+    static int TIMELINE_HEADER_TEXT_SIZE = 16;
+    public static void setTimelineHeaderSize(int size){
+        TIMELINE_HEADER_TEXT_SIZE = size;
+    }
+    public static int getTimelineHeaderSize(){
+        return TIMELINE_HEADER_TEXT_SIZE;
+    }
+
+    /**
+     * Timeline header text colour
+     * */
+    static String TIMELINE_HEADER_TEXT_COLOUR = "#000000";
+    public static void setTimelineHeaderTextColour(String textColour){
+        TIMELINE_HEADER_TEXT_COLOUR = textColour;
+    }
+    public static String getTimelineHeaderTextColour(){
+        return TIMELINE_HEADER_TEXT_COLOUR;
+    }
+
+    /**
+     * Timeline header background colour
+     * */
+    static String TIMELINE_HEADER_BACKGROUND_COLOUR = "#FF5C88C6";
+    public static void setTimelineHeaderBackgroundColour(String textColour){
+        TIMELINE_HEADER_BACKGROUND_COLOUR = textColour;
+    }
+    public static String getTimelineHeaderBackgroundColour(){
+        return TIMELINE_HEADER_BACKGROUND_COLOUR;
+    }
+
+    /**
+     * Timeline indicator background colour
+     * */
+    static String TIMELINE_INDICATOR_BACKGROUND_COLOUR = "#00ffffff";
+    public static void setTimelineIndicatorBackgroundColour(String textColour){
+        TIMELINE_INDICATOR_BACKGROUND_COLOUR = textColour;
+    }
+    public static String getTimelineIndicatorBackgroundColour(){
+        return TIMELINE_INDICATOR_BACKGROUND_COLOUR;
+    }
+
+    /**
+     * Timeline indicator line colour
+     * */
+    static String TIMELINE_INDICATOR_LINE_COLOUR = "#FF5C88C6";
+    public static void setTimelineIndicatorLineColour(String textColour){
+        TIMELINE_INDICATOR_LINE_COLOUR = textColour;
+    }
+    public static String getTimelineIndicatorLineColour(){
+        return TIMELINE_INDICATOR_LINE_COLOUR;
+    }
+
+
+
+    /**
+     * Timeline card text size
+     * */
+    static int TIMELINE_CARD_TEXT_SIZE = 18;
+    public static void setTimelineCardTextSize(int size){
+        TIMELINE_CARD_TEXT_SIZE = size;
+    }
+    public static int getTimelineCardTextSize(){
+        return TIMELINE_CARD_TEXT_SIZE;
+    }
+
+    /**
+     * Timeline card text colour
+     * */
+    static String TIMELINE_CARD_TEXT_COLOUR = "#ffffff";
+    public static void setTimelineCardTextColour(String textColour){
+        TIMELINE_CARD_TEXT_COLOUR = textColour;
+    }
+    public static String getTimelineCardTextColour(){
+        return TIMELINE_CARD_TEXT_COLOUR;
+    }
+
+    /**
+     * Timeline card text background colour
+     * */
+    static String TIMELINE_CARD_TEXT_BACKGROUND_COLOUR = "#dc252525";
+    public static void setTimelineCardTextBackgroundColour(String textColour){
+        TIMELINE_CARD_TEXT_BACKGROUND_COLOUR = textColour;
+    }
+    public static String getTimelineCardTextBackgroundColour(){
+        return TIMELINE_CARD_TEXT_BACKGROUND_COLOUR;
+    }
+
+
 }
