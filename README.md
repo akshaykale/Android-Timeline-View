@@ -44,7 +44,7 @@ MainActivity.java
 SwipeTimelineFragment mFragment = new SwipeTimelineFragment();
 
 //Set data
-TimeLineConfig.setData(objs, TimelineGroupType.MONTH);
+TimeLineConfig.setData(loadData(), TimelineGroupType.MONTH);
 
 //Set configurations
 TimeLineConfig.addOnClickListener(this);
@@ -52,4 +52,20 @@ TimeLineConfig.addOnClickListener(this);
 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 transaction.replace(R.id.container, mFragment);
 transaction.commit();
+```
+
+```loadData()``` function
+```
+private ArrayList<TimelineObject> loadDataInTimeline() {
+        //Load the data in a list and sort it by times in milli
+        ArrayList<TimelineObject> objs = new ArrayList<>();
+        objs.add(new TestO(Long.parseLong("1483196400000"), "A", "url"));
+        objs.add(new TestO(Long.parseLong("1483196400000"), "A", "url"));
+        objs.add(new TestO(Long.parseLong("1483196400000"), "B", "url" ));
+        objs.add(new TestO(Long.parseLong("1483196400000"), "C" , "url"));
+        objs.add(new TestO(Long.parseLong("1484146800000"), "D" ,c"url"));
+        //Sort and return
+        //Sort logic
+        return objs;
+    }
 ```
