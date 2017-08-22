@@ -6,6 +6,5 @@ package com.akshaykale.swipetimeline;
 
 public interface TimelineObject {
     long getTimestamp();
-    String getHeader();
     String getTitle();
 }

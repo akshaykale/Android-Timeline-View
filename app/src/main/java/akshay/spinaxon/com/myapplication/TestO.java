@@ -8,24 +8,18 @@ import com.akshaykale.swipetimeline.TimelineObject;
 
 public class TestO implements TimelineObject {
 
-    public TestO(long timeline, String name, String info) {
+    public TestO(long timeline, String name) {
         this.timeline = timeline;
         this.name = name;
-        this.info = info;
     }
 
     long timeline;
 
-    String name, info;
+    String name;
 
     @Override
     public long getTimestamp() {
         return timeline;
-    }
-
-    @Override
-    public String getHeader() {
-        return info;
     }
 
     @Override

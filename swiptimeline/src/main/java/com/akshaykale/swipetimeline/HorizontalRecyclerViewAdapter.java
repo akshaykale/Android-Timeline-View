@@ -1,5 +1,6 @@
 package com.akshaykale.swipetimeline;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +32,6 @@ public class HorizontalRecyclerViewAdapter extends RecyclerView.Adapter<Horizont
     @Override
     public void onBindViewHolder(HorizontalRecyclerViewHolder holder, int position) {
         holder.textView.setText(""+list.get(position).getTitle());
-
     }
 
     @Override
@@ -51,6 +51,10 @@ public class HorizontalRecyclerViewAdapter extends RecyclerView.Adapter<Horizont
         public HorizontalRecyclerViewHolder(View view) {
             super(view);
             textView = (TextView) view.findViewById(R.id.tv_timeline_horizontal_card_name);
+
+            textView.setTextSize(TimeLineConfig.getTimelineCardTextSize());
+            textView.setTextColor(Color.parseColor(TimeLineConfig.getTimelineCardTextColour()));
+            textView.setBackgroundColor(Color.parseColor(TimeLineConfig.getTimelineCardTextBackgroundColour()));
         }
     }
 }

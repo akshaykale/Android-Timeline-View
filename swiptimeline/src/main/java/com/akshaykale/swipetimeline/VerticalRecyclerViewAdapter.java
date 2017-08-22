@@ -1,11 +1,13 @@
 package com.akshaykale.swipetimeline;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -35,8 +37,6 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
     @Override
     public void onBindViewHolder(VerticalRecyclerViewHolder holder, int position) {
         holder.time.setText(TimeLineConfig.headerList.get(position));
-        //holder.header.setText(TimeLineConfig.headerList.get());
-
 
         HorizontalRecyclerViewAdapter horizontalRecyclerViewAdapter = new HorizontalRecyclerViewAdapter(TimeLineConfig.timelineObjMap.get(TimeLineConfig.headerList.get(position)));
         holder.recyclerView.setAdapter(horizontalRecyclerViewAdapter);
@@ -54,11 +54,24 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
         public TextView time, header;
         public RecyclerView recyclerView;
 
+        RelativeLayout timelineindicator_container;
+        TextView timelineindicator_line;
+
         public VerticalRecyclerViewHolder(View view) {
             super(view);
 
             time = (TextView) view.findViewById(R.id.tv_timeline_time);
             header = (TextView) view.findViewById(R.id.tv_timeline_header);
+            header.setVisibility(View.INVISIBLE);
+
+            timelineindicator_container = (RelativeLayout) view.findViewById(R.id.container_timeline_indicator);
+            timelineindicator_line = (TextView) view.findViewById(R.id.tv_timeline_indicator_line);
+
+            /*apply configs*/
+            time.setTextColor(Color.parseColor(TimeLineConfig.getTimelineHeaderTextColour()));
+            time.setTextSize(TimeLineConfig.getTimelineHeaderSize());
+            timelineindicator_line.setBackgroundColor(Color.parseColor(TimeLineConfig.getTimelineIndicatorLineColour()));
+            timelineindicator_container.setBackgroundColor(Color.parseColor(TimeLineConfig.getTimelineIndicatorBackgroundColour()));
 
             recyclerView = (RecyclerView) view.findViewById(R.id.rv_horizontal_timeline);
 
@@ -66,6 +79,7 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
             recyclerView.setLayoutManager(recyclerViewLayoutManager);
             LinearLayoutManager horizontalLinearLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
             recyclerView.setLayoutManager(horizontalLinearLayoutManager);
+
 
         }
     }
