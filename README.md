@@ -6,7 +6,10 @@ Android timeline to display swiping cards in recycler view group by date
 
 ### Usage
 
-activity_main.xml
+Timeline view can be loaded directly as a Fragment.
+
+Add a container to load the fragment.
+activity_main.xml 
 ```
 <FrameLayout
         android:layout_marginTop="65dp"
@@ -14,29 +17,6 @@ activity_main.xml
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 ```
-
-TestO.java 
-Implement ```TimelineObject``` in your card data object
-```
-public class TestO implements TimelineObject {
-    long timestamp;
-    String name, url;
-
-    @Override
-    public long getTimestamp() {
-        return timestamp;
-    }
-    @Override
-    public String getTitle() {
-        return name;
-    }
-    @Override
-    public String getImageUrl() {
-        return url;
-    }
-}
-```
-
 
 MainActivity.java
 ```
@@ -70,6 +50,42 @@ private ArrayList<TimelineObject> loadDataInTimeline() {
     }
 ```
 
+TestO.java 
+Implement ```TimelineObject``` in your card data object
+```
+public class TestO implements TimelineObject {
+    long timestamp;
+    String name, url;
+
+    @Override
+    public long getTimestamp() {
+        return timestamp;
+    }
+    @Override
+    public String getTitle() {
+        return name;
+    }
+    @Override
+    public String getImageUrl() {
+        return url;
+    }
+}
+```
+
+
+For Image loading this library uses Picasso, But you ca use any library you preffer to load the image.
+For this, create a class ```ImageLoad``` which  ```implements ImageLoadingEngine``` 
+```
+public class ImageLoad implements ImageLoadingEngine {
+    Context context;
+    public ImageLoad(Context context) { this.context = context; }
+    
+    @Override
+    public void onLoadImage(ImageView imageView, String uri) {
+          // Use any library you prefer to load the image into the view
+    }
+}
+```
 
 
 
