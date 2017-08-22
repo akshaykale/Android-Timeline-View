@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -33,6 +34,8 @@ public class HorizontalRecyclerViewAdapter extends RecyclerView.Adapter<Horizont
     @Override
     public void onBindViewHolder(HorizontalRecyclerViewHolder holder, final int position) {
         holder.textView.setText(""+list.get(position).getTitle());
+
+        TimeLineConfig.getImageLoadEngine().onLoadImage(holder.imageView, list.get(position).getImageUrl());
 
         if (TimeLineConfig.getListener() != null) {
             holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +67,7 @@ public class HorizontalRecyclerViewAdapter extends RecyclerView.Adapter<Horizont
     public class HorizontalRecyclerViewHolder extends RecyclerView.ViewHolder {
 
         public TextView textView;
+        public ImageView imageView;
         public CardView cardView;
 
         //public MaterialRatingBar ratingBar;
@@ -72,6 +76,7 @@ public class HorizontalRecyclerViewAdapter extends RecyclerView.Adapter<Horizont
             super(view);
             textView = (TextView) view.findViewById(R.id.tv_timeline_horizontal_card_name);
             cardView = (CardView) view.findViewById(R.id.timeline_obj_cardview);
+            imageView = (ImageView) view.findViewById(R.id.iv_horizontal_card_image);
 
             textView.setTextSize(TimeLineConfig.getTimelineCardTextSize());
             textView.setTextColor(Color.parseColor(TimeLineConfig.getTimelineCardTextColour()));

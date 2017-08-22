@@ -15,8 +15,6 @@ public class TimeLineConfig {
     public static HashMap<String, ArrayList<TimelineObject>> timelineObjMap = new HashMap<>();
     public static ArrayList<String> headerList = new ArrayList<>();
 
-    public static TimelineObjectClickListener timelineObjectClickListener = null;
-
     public static void setData(ArrayList<TimelineObject> list, TimelineGroupType type) {
 
         ArrayList<String> tabsList = new ArrayList<>();
@@ -72,12 +70,30 @@ public class TimeLineConfig {
 
     }
 
+
+    public static TimelineObjectClickListener timelineObjectClickListener = null;
     public static void addOnClickListener(TimelineObjectClickListener listener){
         timelineObjectClickListener = listener;
     }
     public static TimelineObjectClickListener getListener(){
         return timelineObjectClickListener;
     }
+
+
+    /**
+     * Image loading engine
+     * */
+    public static ImageLoadingEngine imageLoadingEngine = null;
+    public static void setImageLoadEngine(ImageLoadingEngine engine){
+        imageLoadingEngine = engine;
+    }
+    public static ImageLoadingEngine getImageLoadEngine(){
+        if (imageLoadingEngine == null){
+            return new PicassoEngine();
+        }
+        return imageLoadingEngine;
+    }
+
 
     /**
     * Timeline header text size

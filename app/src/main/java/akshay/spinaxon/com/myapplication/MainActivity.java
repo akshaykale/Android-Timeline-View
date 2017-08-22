@@ -40,21 +40,30 @@ public class MainActivity extends AppCompatActivity implements TimelineObjectCli
             }
         });
 
+
+        // instantiate the SwipeTimelineFragment
         mFragment = new SwipeTimelineFragment();
 
+        //Load the data in a list and sort it by times in milli
         ArrayList<TimelineObject> objs = new ArrayList<>();
-        objs.add(new TestO(Long.parseLong("1483196400000"), "A"));
-        objs.add(new TestO(Long.parseLong("1483196400000"), "A" ));
-        objs.add(new TestO(Long.parseLong("1483196400000"), "A" ));
-        objs.add(new TestO(Long.parseLong("1484146800000"), "B" ));
-        objs.add(new TestO(Long.parseLong("1485961200000"), "C" ));
-        objs.add(new TestO(Long.parseLong("1487084400000"), "D" ));
-        objs.add(new TestO(Long.parseLong("1489244400000"), "E" ));
-        objs.add(new TestO(Long.parseLong("1491922800000"), "F" ));
-        objs.add(new TestO(Long.parseLong("1491922800000"), "F" ));
+        objs.add(new TestO(Long.parseLong("1483196400000"), "A", "http://www.meetingsnet.com/sites/meetingsnet.com/files/TopTipsJune1.jpg"));
+        objs.add(new TestO(Long.parseLong("1483196400000"), "A", "https://www.w3schools.com/css/img_fjords.jpg" ));
+        objs.add(new TestO(Long.parseLong("1483196400000"), "A" , "https://t2.uc.ltmcdn.com/pt/images/5/7/1/img_como_fazer_rosas_azuis_naturais_25175_600.jpg"));
+        objs.add(new TestO(Long.parseLong("1484146800000"), "B" ,"http://i.dailymail.co.uk/i/pix/2017/01/16/20/332EE38400000578-4125738-image-a-132_1484600112489.jpg"));
+        objs.add(new TestO(Long.parseLong("1485961200000"), "C", "http://i.dailymail.co.uk/i/pix/2016/09/06/11/37F60FD200000578-0-image-a-5_1473156426673.jpg" ));
+        objs.add(new TestO(Long.parseLong("1487084400000"), "D" ,"http://www.nhm.ac.uk/content/dam/nhmwww/visit/Exhibitions/art-of-british-natural-history/magpie-illustration-keulemans-two-column.jpg"));
+        objs.add(new TestO(Long.parseLong("1489244400000"), "E" ,"https://cdn.pixabay.com/photo/2016/12/29/16/12/eiskristalle-1938842_960_720.jpg"));
+        objs.add(new TestO(Long.parseLong("1491922800000"), "F" ,"http://www.pics4learning.com/images/categories/cat-biome-360.jpg"));
+        objs.add(new TestO(Long.parseLong("1491922800000"), "F" ,"http://www.holifestival.org/images/holi-image-4-big.jpg"));
 
+        //Set data
         TimeLineConfig.setData(objs, TimelineGroupType.DAY);
+
+        //Set configurations
         TimeLineConfig.addOnClickListener(this);
+        TimeLineConfig.setImageLoadEngine(new ImageLoad(getApplicationContext()));
+        TimeLineConfig.setTimelineCardTextBackgroundColour("#fff000"); //blue color
+
         loadFragment(mFragment);
     }
 
