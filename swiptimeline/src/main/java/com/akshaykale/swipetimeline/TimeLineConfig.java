@@ -15,6 +15,8 @@ public class TimeLineConfig {
     public static HashMap<String, ArrayList<TimelineObject>> timelineObjMap = new HashMap<>();
     public static ArrayList<String> headerList = new ArrayList<>();
 
+    public static TimelineObjectClickListener timelineObjectClickListener = null;
+
     public static void setData(ArrayList<TimelineObject> list, TimelineGroupType type) {
 
         ArrayList<String> tabsList = new ArrayList<>();
@@ -70,6 +72,12 @@ public class TimeLineConfig {
 
     }
 
+    public static void addOnClickListener(TimelineObjectClickListener listener){
+        timelineObjectClickListener = listener;
+    }
+    public static TimelineObjectClickListener getListener(){
+        return timelineObjectClickListener;
+    }
 
     /**
     * Timeline header text size

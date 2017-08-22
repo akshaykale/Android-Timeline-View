@@ -10,15 +10,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.akshaykale.swipetimeline.SwipeTimelineFragment;
 import com.akshaykale.swipetimeline.TimeLineConfig;
 import com.akshaykale.swipetimeline.TimelineGroupType;
 import com.akshaykale.swipetimeline.TimelineObject;
+import com.akshaykale.swipetimeline.TimelineObjectClickListener;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements TimelineObjectClickListener {
 
     private SwipeTimelineFragment mFragment;
 
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         objs.add(new TestO(Long.parseLong("1491922800000"), "F" ));
 
         TimeLineConfig.setData(objs, TimelineGroupType.DAY);
+        TimeLineConfig.addOnClickListener(this);
         loadFragment(mFragment);
     }
 
@@ -82,5 +85,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onTimelineObjectClicked(TimelineObject timelineObject) {
+        Toast.makeText(getApplicationContext(),"Clicked: "+timelineObject.getTitle(),Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onTimelineObjectLongClicked(TimelineObject timelineObject) {
+        Toast.makeText(getApplicationContext(),"LongClicked: "+timelineObject.getTitle(),Toast.LENGTH_LONG).show();
     }
 }
