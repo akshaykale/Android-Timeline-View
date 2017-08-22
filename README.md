@@ -100,6 +100,7 @@ public class ImageLoad implements ImageLoadingEngine {
 | Function | Usage |
 |---|---|
 |```TimeLineConfig```<br>```.addOnClickListener();```| Implement click events on the timeline objects <br>1. ```void onTimelineObjectClicked(TimelineObject object){...}``` <br>2. ```void onTimelineObjectLongClicked(TimelineObject object) {...}```|
+|```TimeLineConfig```<br>```.setData(ArrayList<TimelineObject> list, TimelineGroupType type){...}```|Set data to the timeline.<br>Parameters:<br>1. List of TimelineObjects.<br>```Ex:```<br>```class Food implements TimelineObject{...}```<br>2. Group type:<br>  a> ```TimelineGroupType.DAY```<br>  b>```TimelineGroupType.MONTH```<br>  c>```TimelineGroupType.YEAR```| 
 |```TimeLineConfig```<br>```.setImageLoadEngine(ImageLoadingEngine engin){...}```|Add custom image loading logic|
 |```TimeLineConfig```<br>```.setTimelineHeaderSize(int size){...}```|Text size of the date header|
 |```TimeLineConfig```<br>```.setTimelineHeaderTextColour(String textColour)```|Set text colour of date header|
