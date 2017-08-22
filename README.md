@@ -8,6 +8,8 @@ Android timeline to display swiping cards in recycler view group by date
 
 Timeline view can be loaded directly as a Fragment.
 
+<br>
+
 Add a container to load the fragment.
 activity_main.xml 
 ```
@@ -17,6 +19,7 @@ activity_main.xml
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 ```
+<br>
 
 MainActivity.java
 ```
@@ -33,8 +36,9 @@ FragmentTransaction transaction = getSupportFragmentManager().beginTransaction()
 transaction.replace(R.id.container, mFragment);
 transaction.commit();
 ```
+<br>
 
-```loadDataInTimeline()``` function
+Load the data into Timeline using ```loadDataInTimeline()``` function
 ```
 private ArrayList<TimelineObject> loadDataInTimeline() {
         //Load the data in a list and sort it by times in milli
@@ -49,9 +53,10 @@ private ArrayList<TimelineObject> loadDataInTimeline() {
         return objs;
     }
 ```
+<br>
 
+Every data object must implement ```TimelineObject``` and override the methods and return valid value.
 TestO.java 
-Implement ```TimelineObject``` in your card data object
 ```
 public class TestO implements TimelineObject {
     long timestamp;
@@ -71,7 +76,9 @@ public class TestO implements TimelineObject {
     }
 }
 ```
-
+<br>
+<br>
+#### Use different image loading library
 
 For Image loading this library uses Picasso, But you ca use any library you preffer to load the image.
 For this, create a class ```ImageLoad``` which  ```implements ImageLoadingEngine``` 
@@ -87,6 +94,15 @@ public class ImageLoad implements ImageLoadingEngine {
 }
 ```
 
+#### Configurations
+
+
+| Function | Usage |
+|---|---|
+| TimeLineConfig.addOnClickListener();| Implement click events on the timeline objects <br>1. ```void onTimelineObjectClicked(TimelineObject object){...}``` <br>2. ```void onTimelineObjectLongClicked(TimelineObject object) {...}```|
+|---|---|
+| 
+
 
 
 
@@ -94,6 +110,7 @@ public class ImageLoad implements ImageLoadingEngine {
 
 <br>
 <br>
+
 ```
 MIT License
 
