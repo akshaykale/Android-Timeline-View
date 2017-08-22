@@ -34,7 +34,7 @@ transaction.replace(R.id.container, mFragment);
 transaction.commit();
 ```
 
-```loadData()``` function
+```loadDataInTimeline()``` function
 ```
 private ArrayList<TimelineObject> loadDataInTimeline() {
         //Load the data in a list and sort it by times in milli
