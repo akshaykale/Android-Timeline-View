@@ -16,11 +16,11 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/iv_horizontal_card_dish_image"
+            android:id="@+id/iv_horizontal_card_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/pasta"/>
+            />
 
         <LinearLayout
             android:id="@+id/horizontal_card_text_holder_rating"

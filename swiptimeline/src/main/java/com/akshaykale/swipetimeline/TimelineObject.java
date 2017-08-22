@@ -7,4 +7,5 @@ package com.akshaykale.swipetimeline;
 public interface TimelineObject {
     long getTimestamp();
     String getTitle();
+    String getImageUrl();
 }
