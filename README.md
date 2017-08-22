@@ -100,7 +100,7 @@ public class ImageLoad implements ImageLoadingEngine {
 | Function | Usage |
 |---|---|
 |```TimeLineConfig```<br>```.addOnClickListener();```| Implement click events on the timeline objects <br>1. ```void onTimelineObjectClicked(TimelineObject object){...}``` <br>2. ```void onTimelineObjectLongClicked(TimelineObject object) {...}```|
-|```TimeLineConfig```<br>```.setImageLoadEngine(...){...}```|Add custom image loading logic|
+|```TimeLineConfig```<br>```.setImageLoadEngine(ImageLoadingEngine engin){...}```|Add custom image loading logic|
 |```TimeLineConfig```<br>```.setTimelineHeaderSize(int size){...}```|Text size of the date header|
 |```TimeLineConfig```<br>```.setTimelineHeaderTextColour(String textColour)```|Set text colour of date header|
 |```TimeLineConfig```<br>```.setTimelineIndicatorBackgroundColour(String textColour){...}```|Change the background colour of Timeline indicator|
