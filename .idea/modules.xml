@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-timeline-view/android-timeline-view.iml" filepath="$PROJECT_DIR$/android-timeline-view/android-timeline-view.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/swiptimeline/swiptimeline.iml" filepath="$PROJECT_DIR$/swiptimeline/swiptimeline.iml" />
     </modules>
   </component>
 </project>
