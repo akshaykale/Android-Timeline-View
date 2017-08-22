@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements TimelineObjectCli
         ArrayList<TimelineObject> objs = loadDataInTimeline();
 
         //Set data
-        TimeLineConfig.setData(objs, TimelineGroupType.MONTH);
+        TimeLineConfig.setData(objs, TimelineGroupType.DAY);
 
         //Set configurations
         TimeLineConfig.addOnClickListener(this);
