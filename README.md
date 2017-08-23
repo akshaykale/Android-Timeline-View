@@ -4,6 +4,16 @@ Android timeline to display swiping cards in recycler view group by Day, Month o
 ## Demo
 ![](https://github.com/akshaykale/Android_Timeline/blob/master/media/demo.gif "Demo gif")
 
+<br>
+
+### Install
+
+Add following to application level ```build.gradle``` file<br>
+``` 
+//install library
+compile 'com.akshaykale.android:android-timeline-view:1.0'
+```
+
 ### Usage
 
 Timeline view can be loaded directly as a Fragment.
