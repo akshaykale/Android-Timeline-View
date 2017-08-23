@@ -10,8 +10,10 @@ Timeline view can be loaded directly as a Fragment.
 
 <br>
 
-Add a container to load the fragment.
-activity_main.xml 
+Add a container to load the fragment.<br>
+
+#### activity_main.xml 
+
 ```
 <FrameLayout
         android:layout_marginTop="65dp"
@@ -21,7 +23,8 @@ activity_main.xml
 ```
 <br>
 
-MainActivity.java
+#### MainActivity.java
+
 ```
 // instantiate the SwipeTimelineFragment
 SwipeTimelineFragment mFragment = new SwipeTimelineFragment();
@@ -38,7 +41,8 @@ transaction.commit();
 ```
 <br>
 
-Load the data into Timeline using ```loadDataInTimeline()``` function
+#### Load the data into Timeline using ```loadDataInTimeline()``` function
+
 ```
 private ArrayList<TimelineObject> loadDataInTimeline() {
         //Load the data in a list and sort it by times in milli
@@ -55,8 +59,9 @@ private ArrayList<TimelineObject> loadDataInTimeline() {
 ```
 <br>
 
+#### TestO.java <br>
+
 Every data object must implement ```TimelineObject``` and override the methods and return valid value.
-TestO.java 
 ```
 public class TestO implements TimelineObject {
     long timestamp;
@@ -97,7 +102,7 @@ public class ImageLoad implements ImageLoadingEngine {
 And before loading the fragment into the container add following line of code.<br>
 ```TimeLineConfig.setImageLoadEngine(new ImageLoad(getApplicationContext()));```
 
-#### Configurations
+### Configurations
 
 
 | Function | Usage |
