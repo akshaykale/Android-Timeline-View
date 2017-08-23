@@ -78,6 +78,7 @@ public class TestO implements TimelineObject {
 ```
 <br>
 <br>
+
 #### Use different image loading library
 
 For Image loading this library uses Picasso, But you ca use any library you preffer to load the image.
@@ -93,6 +94,8 @@ public class ImageLoad implements ImageLoadingEngine {
     }
 }
 ```
+And before loading the fragment into the container add following line of code.<br>
+```TimeLineConfig.setImageLoadEngine(new ImageLoad(getApplicationContext()));```
 
 #### Configurations
 
