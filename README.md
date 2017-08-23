@@ -1,10 +1,8 @@
 # Android-Timeline-View
 Android timeline to display swiping cards in recycler view group by Day, Month or Year.
-<br>
-![](https://travis-ci.org/akshaykale/Android-Timeline-View.png?branch=master)
-<br>
 
-## Demo
+
+## Demo [Video](https://youtu.be/YkOB63MkMFY) 
 ![](https://github.com/akshaykale/Android_Timeline/blob/master/media/demo.gif "Demo gif")
 
 <br>
