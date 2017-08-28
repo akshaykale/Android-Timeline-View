@@ -97,7 +97,7 @@ public class TestO implements TimelineObject {
 
 #### Use different image loading library
 
-For Image loading this library uses Picasso, But you ca use any library you preffer to load the image.
+For Image loading this library uses Picasso, But you can use any library you preffer to load the image.
 For this, create a class ```ImageLoad``` which  ```implements ImageLoadingEngine``` 
 ```
 public class ImageLoad implements ImageLoadingEngine {
