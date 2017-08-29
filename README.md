@@ -1,9 +1,9 @@
 # Android-Timeline-View
-Android timeline to display swiping cards in recycler view group by Day, Month or Year.
+Android timeline to display horizontal sliding cards in recycler view, group by Day, Month or Year.
 
 
 ## Demo [Video](https://youtu.be/YkOB63MkMFY) 
-![](https://github.com/akshaykale/Android_Timeline/blob/master/media/demo.gif "Demo gif")
+![](https://raw.githubusercontent.com/akshaykale/Android-Timeline-View/master/media/demo.gif "Demo gif")
 
 <br>
 
