@@ -10,7 +10,7 @@ import java.util.HashMap;
  * Created by akshaykale on 2017/08/21.
  */
 
-public class TimeLineConfig {
+class TimeLineConfig {
 
     public static HashMap<String, ArrayList<TimelineObject>> timelineObjMap = new HashMap<>();
     public static ArrayList<String> headerList = new ArrayList<>();

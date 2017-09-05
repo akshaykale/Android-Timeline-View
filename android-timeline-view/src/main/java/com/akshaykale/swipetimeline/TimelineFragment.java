@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 /**
  * Created by akshaykale on 2017/08/21.
  */
@@ -47,6 +49,17 @@ public class TimelineFragment extends Fragment{
         verticalLinearLayoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(verticalLinearLayoutManager);
         recyclerView.setAdapter(verticalRecyclerViewAdapter);
+    }
 
+    public void addOnClickListener(TimelineObjectClickListener listener){
+        TimeLineConfig.addOnClickListener(listener);
+    }
+
+    public void setImageLoadEngine(ImageLoadingEngine engine){
+        TimeLineConfig.setImageLoadEngine(engine);
+    }
+
+    public void setData(ArrayList<TimelineObject> dataList, TimelineGroupType type ){
+        TimeLineConfig.setData(dataList, type);
     }
 }
