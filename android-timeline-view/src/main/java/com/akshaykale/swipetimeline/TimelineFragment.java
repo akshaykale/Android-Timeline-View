@@ -73,5 +73,84 @@ public class TimelineFragment extends Fragment{
         TimeLineConfig.clearData();
     }
 
+    /**
+     * Timeline header text size
+     * */
+    public void setTimelineHeaderSize(int size){
+        TimeLineConfig.setTimelineHeaderSize(size);
+    }
+    public int getTimelineHeaderSize(){
+        return TimeLineConfig.getTimelineHeaderSize();
+    }
+
+    /**
+     * Timeline header text colour
+     * */
+    public void setTimelineHeaderTextColour(String textColour){
+        TimeLineConfig.setTimelineHeaderTextColour(textColour);
+    }
+    public String getTimelineHeaderTextColour(){
+        return TimeLineConfig.getTimelineHeaderTextColour();
+    }
+
+    /**
+     * Timeline header background colour
+     * */
+    public void setTimelineHeaderBackgroundColour(String colour){
+        TimeLineConfig.setTimelineHeaderBackgroundColour(colour);
+    }
+    public String getTimelineHeaderBackgroundColour(){
+        return TimeLineConfig.getTimelineHeaderBackgroundColour();
+    }
+
+    /**
+     * Timeline indicator background colour
+     * */
+    public void setTimelineIndicatorBackgroundColour(String colour){
+        TimeLineConfig.setTimelineIndicatorBackgroundColour(colour);
+    }
+    public String getTimelineIndicatorBackgroundColour(){
+        return TimeLineConfig.getTimelineIndicatorBackgroundColour();
+    }
+
+    /**
+     * Timeline indicator line colour
+     * */
+    public void setTimelineIndicatorLineColour(String colour){
+        TimeLineConfig.setTimelineIndicatorLineColour(colour);
+    }
+    public String getTimelineIndicatorLineColour(){
+        return TimeLineConfig.getTimelineIndicatorLineColour();
+    }
+
+    /**
+     * Timeline card text size
+     * */
+    public void setTimelineCardTextSize(int size){
+        TimeLineConfig.setTimelineCardTextSize(size);
+    }
+    public int getTimelineCardTextSize(){
+        return TimeLineConfig.getTimelineCardTextSize();
+    }
+
+    /**
+     * Timeline card text colour
+     * */
+    public void setTimelineCardTextColour(String colour){
+        TimeLineConfig.setTimelineCardTextColour(colour);
+    }
+    public String getTimelineCardTextColour(){
+        return TimeLineConfig.getTimelineCardTextColour();
+    }
+
+    /**
+     * Timeline card text background colour
+     * */
+    public void setTimelineCardTextBackgroundColour(String colour){
+        TimeLineConfig.setTimelineCardTextBackgroundColour(colour);
+    }
+    public String getTimelineCardTextBackgroundColour(){
+        return TimeLineConfig.getTimelineCardTextBackgroundColour();
+    }
 
 }
