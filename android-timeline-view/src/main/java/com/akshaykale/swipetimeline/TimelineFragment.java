@@ -9,13 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import static android.R.id.list;
-
 /**
  * Created by akshaykale on 2017/08/21.
  */
 
-public class SwipeTimelineFragment extends Fragment{
+public class TimelineFragment extends Fragment{
 
     private RecyclerView recyclerView;
     private LinearLayoutManager recyclerViewLayoutManager;

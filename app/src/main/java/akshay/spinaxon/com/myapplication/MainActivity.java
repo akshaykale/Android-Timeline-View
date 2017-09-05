@@ -14,7 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.akshaykale.swipetimeline.SwipeTimelineFragment;
+import com.akshaykale.swipetimeline.TimelineFragment;
 import com.akshaykale.swipetimeline.TimeLineConfig;
 import com.akshaykale.swipetimeline.TimelineGroupType;
 import com.akshaykale.swipetimeline.TimelineObject;
@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements TimelineObjectClickListener {
 
-    private SwipeTimelineFragment mFragment;
+    private TimelineFragment mFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity implements TimelineObjectCli
         });
 
 
-        // instantiate the SwipeTimelineFragment
-        mFragment = new SwipeTimelineFragment();
+        // instantiate the TimelineFragment
+        mFragment = new TimelineFragment();
 
         ArrayList<TimelineObject> objs = loadDataInTimeline();
 
