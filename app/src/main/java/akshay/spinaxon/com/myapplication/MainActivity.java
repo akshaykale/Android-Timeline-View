@@ -65,6 +65,15 @@ public class MainActivity extends AppCompatActivity implements TimelineObjectCli
 
         //Load frag after configs and setting the data
         loadFragment(mFragment);
+
+        mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+        mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ1", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+        mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ2", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+        mFragment.addSingleObject(new TestO(Long.parseLong("1181196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+        mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+        mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+        mFragment.addSingleObject(new TestO(Long.parseLong("1581196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+
     }
 
     private ArrayList<TimelineObject> loadDataInTimeline() {

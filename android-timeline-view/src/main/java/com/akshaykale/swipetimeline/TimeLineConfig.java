@@ -66,8 +66,33 @@ class TimeLineConfig {
 
         timelineObjMap = map;
         headerList = tabsList;
+    }
 
-
+    public static void addObject(TimelineObject photo, TimelineGroupType type){
+        long ts = photo.getTimestamp();
+        Date date = new Date(ts);
+        String day = (String) DateFormat.format("dd", date);
+        String month = (String) DateFormat.format("MMM", date);
+        String year = (String) DateFormat.format("yyyy", date);
+        String tabTitle = "";
+        switch (type) {
+            case DAY:
+                tabTitle = day + " " + month + ", " + year;
+                break;
+            case MONTH:
+                tabTitle = month + ", " + year;
+                break;
+            case YEAR:
+                tabTitle = year;
+        }
+        if(headerList.contains(tabTitle)){
+            timelineObjMap.get(tabTitle).add(photo);
+        }else {
+            ArrayList<TimelineObject> _l = new ArrayList<>();
+            _l.add(photo);
+            headerList.add(tabTitle);
+            timelineObjMap.put(tabTitle, _l);
+        }
     }
 
 
@@ -185,5 +210,8 @@ class TimeLineConfig {
         return TIMELINE_CARD_TEXT_BACKGROUND_COLOUR;
     }
 
-
+    public static void clearData() {
+        timelineObjMap.clear();
+        headerList.clear();
+    }
 }

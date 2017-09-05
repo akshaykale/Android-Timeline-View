@@ -62,4 +62,16 @@ public class TimelineFragment extends Fragment{
     public void setData(ArrayList<TimelineObject> dataList, TimelineGroupType type ){
         TimeLineConfig.setData(dataList, type);
     }
+
+    public void addSingleObject(TimelineObject data, TimelineGroupType type){
+        TimeLineConfig.addObject(data,type);
+        if (verticalRecyclerViewAdapter!=null)
+            verticalRecyclerViewAdapter.notifyDataSetChanged();
+    }
+
+    public void clearData(){
+        TimeLineConfig.clearData();
+    }
+
+
 }
