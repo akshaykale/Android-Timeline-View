@@ -15,7 +15,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.akshaykale.swipetimeline.TimelineFragment;
-import com.akshaykale.swipetimeline.TimeLineConfig;
 import com.akshaykale.swipetimeline.TimelineGroupType;
 import com.akshaykale.swipetimeline.TimelineObject;
 import com.akshaykale.swipetimeline.TimelineObjectClickListener;
@@ -56,11 +55,11 @@ public class MainActivity extends AppCompatActivity implements TimelineObjectCli
         ArrayList<TimelineObject> objs = loadDataInTimeline();
 
         //Set data
-        TimeLineConfig.setData(objs, TimelineGroupType.DAY);
+        mFragment.setData(objs, TimelineGroupType.DAY);
 
         //Set configurations
-        TimeLineConfig.addOnClickListener(this);
-        TimeLineConfig.setImageLoadEngine(new ImageLoad(getApplicationContext()));
+        mFragment.addOnClickListener(this);
+        mFragment.setImageLoadEngine(new ImageLoad(getApplicationContext()));
         //TimeLineConfig.setTimelineCardTextBackgroundColour("#fff000");
         //TimeLineConfig.setTimelineIndicatorLineColour("#fff000"); //yellow line color
 
