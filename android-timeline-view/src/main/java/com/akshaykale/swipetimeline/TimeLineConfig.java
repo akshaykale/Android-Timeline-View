@@ -10,7 +10,32 @@ import java.util.HashMap;
  * Created by akshaykale on 2017/08/21.
  */
 
-public class TimeLineConfig {
+/*
+*
+MIT License
+
+Copyright (c) 2017 Akshay Kale
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+* */
+
+class TimeLineConfig {
 
     public static HashMap<String, ArrayList<TimelineObject>> timelineObjMap = new HashMap<>();
     public static ArrayList<String> headerList = new ArrayList<>();
@@ -66,8 +91,33 @@ public class TimeLineConfig {
 
         timelineObjMap = map;
         headerList = tabsList;
+    }
 
-
+    public static void addObject(TimelineObject photo, TimelineGroupType type){
+        long ts = photo.getTimestamp();
+        Date date = new Date(ts);
+        String day = (String) DateFormat.format("dd", date);
+        String month = (String) DateFormat.format("MMM", date);
+        String year = (String) DateFormat.format("yyyy", date);
+        String tabTitle = "";
+        switch (type) {
+            case DAY:
+                tabTitle = day + " " + month + ", " + year;
+                break;
+            case MONTH:
+                tabTitle = month + ", " + year;
+                break;
+            case YEAR:
+                tabTitle = year;
+        }
+        if(headerList.contains(tabTitle)){
+            timelineObjMap.get(tabTitle).add(photo);
+        }else {
+            ArrayList<TimelineObject> _l = new ArrayList<>();
+            _l.add(photo);
+            headerList.add(tabTitle);
+            timelineObjMap.put(tabTitle, _l);
+        }
     }
 
 
@@ -185,5 +235,8 @@ public class TimeLineConfig {
         return TIMELINE_CARD_TEXT_BACKGROUND_COLOUR;
     }
 
-
+    public static void clearData() {
+        timelineObjMap.clear();
+        headerList.clear();
+    }
 }

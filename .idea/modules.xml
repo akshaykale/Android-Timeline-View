@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Android-Timeline-View.iml" filepath="$PROJECT_DIR$/Android-Timeline-View.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Android-Timeline-View-V2.iml" filepath="$PROJECT_DIR$/Android-Timeline-View-V2.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-timeline-view/android-timeline-view.iml" filepath="$PROJECT_DIR$/android-timeline-view/android-timeline-view.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />

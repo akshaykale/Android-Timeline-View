@@ -41,10 +41,10 @@ Add a container to load the fragment.<br>
 SwipeTimelineFragment mFragment = new SwipeTimelineFragment();
 
 //Set data
-TimeLineConfig.setData(loadData(), TimelineGroupType.MONTH);
+mFragment.setData(loadData(), TimelineGroupType.MONTH);
 
 //Set configurations
-TimeLineConfig.addOnClickListener(this);
+mFragment.addOnClickListener(this);
 
 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 transaction.replace(R.id.container, mFragment);
@@ -68,6 +68,16 @@ private ArrayList<TimelineObject> loadDataInTimeline() {
         return objs;
     }
 ```
+<br>
+
+#### Load single object into timeline using ``` addSingleObject() ``` function
+
+```
+TestO object = new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg");
+
+mFragment.addSingleObject(object, TimelineGroupType.DAY);
+```
+
 <br>
 
 #### TestO.java <br>
@@ -118,15 +128,15 @@ And before loading the fragment into the container add following line of code.<b
 
 | Function | Usage |
 |---|---|
-|```TimeLineConfig```<br>```.addOnClickListener();```| Implement click events on the timeline objects <br>1. ```void onTimelineObjectClicked(TimelineObject object){...}``` <br>2. ```void onTimelineObjectLongClicked(TimelineObject object) {...}```|
-|```TimeLineConfig```<br>```.setData(ArrayList<TimelineObject> list, TimelineGroupType type){...}```|Set data to the timeline.<br>Parameters:<br>1. List of TimelineObjects.<br>```Ex:```<br>```class Food implements TimelineObject{...}```<br>2. Group type:<br>  a> ```TimelineGroupType.DAY```<br>  b>```TimelineGroupType.MONTH```<br>  c>```TimelineGroupType.YEAR```| 
-|```TimeLineConfig```<br>```.setImageLoadEngine(ImageLoadingEngine engin){...}```|Add custom image loading logic|
-|```TimeLineConfig```<br>```.setTimelineHeaderSize(int size){...}```|Text size of the date header|
-|```TimeLineConfig```<br>```.setTimelineHeaderTextColour(String textColour)```|Set text colour of date header|
-|```TimeLineConfig```<br>```.setTimelineIndicatorBackgroundColour(String textColour){...}```|Change the background colour of Timeline indicator|
-|```TimeLineConfig```<br>```.setTimelineIndicatorLineColour(String textColour){...}```|Chenge the timeline indicator line colour|
-|```TimeLineConfig```<br>```.setTimelineCardTextSize(int size){...}```|Change the text size of timeline card|
-|```TimeLineConfig```<br>```.setTimelineCardTextBackgroundColour(String textColour){...}```|Change the text background colour of card|
+|```addOnClickListener();```| Implement click events on the timeline objects <br>1. ```void onTimelineObjectClicked(TimelineObject object){...}``` <br>2. ```void onTimelineObjectLongClicked(TimelineObject object) {...}```|
+|```setData(ArrayList<TimelineObject> list, TimelineGroupType type)```|Set data to the timeline.<br>Parameters:<br>1. List of TimelineObjects.<br>```Ex:```<br>```class Food implements TimelineObject{...}```<br>2. Group type:<br>  a> ```TimelineGroupType.DAY```<br>  b>```TimelineGroupType.MONTH```<br>  c>```TimelineGroupType.YEAR```| 
+|```setImageLoadEngine(ImageLoadingEngine engin)```|Add custom image loading logic|
+|```setTimelineHeaderSize(int size)```|Text size of the date header|
+|```setTimelineHeaderTextColour(String textColour)```|Set text colour of date header|
+|```setTimelineIndicatorBackgroundColour(String textColour)```|Change the background colour of Timeline indicator|
+|```setTimelineIndicatorLineColour(String textColour)```|Chenge the timeline indicator line colour|
+|```setTimelineCardTextSize(int size)```|Change the text size of timeline card|
+|```setTimelineCardTextBackgroundColour(String textColour)```|Change the text background colour of card|
 
 
 

@@ -14,8 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.akshaykale.swipetimeline.SwipeTimelineFragment;
-import com.akshaykale.swipetimeline.TimeLineConfig;
+import com.akshaykale.swipetimeline.TimelineFragment;
 import com.akshaykale.swipetimeline.TimelineGroupType;
 import com.akshaykale.swipetimeline.TimelineObject;
 import com.akshaykale.swipetimeline.TimelineObjectClickListener;
@@ -24,7 +23,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements TimelineObjectClickListener {
 
-    private SwipeTimelineFragment mFragment;
+    private TimelineFragment mFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,22 +49,31 @@ public class MainActivity extends AppCompatActivity implements TimelineObjectCli
         });
 
 
-        // instantiate the SwipeTimelineFragment
-        mFragment = new SwipeTimelineFragment();
+        // instantiate the TimelineFragment
+        mFragment = new TimelineFragment();
 
         ArrayList<TimelineObject> objs = loadDataInTimeline();
 
         //Set data
-        TimeLineConfig.setData(objs, TimelineGroupType.DAY);
+        mFragment.setData(objs, TimelineGroupType.DAY);
 
         //Set configurations
-        TimeLineConfig.addOnClickListener(this);
-        TimeLineConfig.setImageLoadEngine(new ImageLoad(getApplicationContext()));
+        mFragment.addOnClickListener(this);
+        mFragment.setImageLoadEngine(new ImageLoad(getApplicationContext()));
         //TimeLineConfig.setTimelineCardTextBackgroundColour("#fff000");
         //TimeLineConfig.setTimelineIndicatorLineColour("#fff000"); //yellow line color
 
         //Load frag after configs and setting the data
         loadFragment(mFragment);
+
+        mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+        mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ1", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+        mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ2", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+        mFragment.addSingleObject(new TestO(Long.parseLong("1181196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+        mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+        mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+        mFragment.addSingleObject(new TestO(Long.parseLong("1581196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+
     }
 
     private ArrayList<TimelineObject> loadDataInTimeline() {
