@@ -135,6 +135,7 @@ And before loading the fragment into the container add following line of code.<b
 |---|---|
 |```addOnClickListener();```| Implement click events on the timeline objects <br>1. ```void onTimelineObjectClicked(TimelineObject object){...}``` <br>2. ```void onTimelineObjectLongClicked(TimelineObject object) {...}```|
 |```setData(ArrayList<TimelineObject> list, TimelineGroupType type)```|Set data to the timeline.<br>Parameters:<br>1. List of TimelineObjects.<br>```Ex:```<br>```class Food implements TimelineObject{...}```<br>2. Group type:<br>  a> ```TimelineGroupType.DAY```<br>  b>```TimelineGroupType.MONTH```<br>  c>```TimelineGroupType.YEAR```| 
+|```addSingleObject(TimelineObject object, TimelineGroupType type)```|Add a single object to the timeline.<br>Parameters:<br>1. TimelineObject.<br>```Ex:```<br>```class Food implements TimelineObject{...}```<br>2. Group type:<br>  a> ```TimelineGroupType.DAY```<br>  b>```TimelineGroupType.MONTH```<br>  c>```TimelineGroupType.YEAR```|
 |```setImageLoadEngine(ImageLoadingEngine engin)```|Add custom image loading logic|
 |```setTimelineHeaderSize(int size)```|Text size of the date header|
 |```setTimelineHeaderTextColour(String textColour)```|Set text colour of date header|
