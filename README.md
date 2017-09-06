@@ -10,9 +10,14 @@ Android timeline to display horizontal sliding cards in recycler view, group by 
 ### Install
 
 Add following to application level ```build.gradle``` file<br>
-``` 
-//install library
-compile 'com.akshaykale.android:android-timeline-view:1.0'
+```
+dependencies {
+    //...
+
+    compile 'com.akshaykale.android:android-timeline-view:1.1'
+
+    //...
+}
 ```
 
 ### Usage
