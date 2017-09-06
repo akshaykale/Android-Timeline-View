@@ -41,10 +41,10 @@ Add a container to load the fragment.<br>
 SwipeTimelineFragment mFragment = new SwipeTimelineFragment();
 
 //Set data
-TimeLineConfig.setData(loadData(), TimelineGroupType.MONTH);
+mFragment.setData(loadData(), TimelineGroupType.MONTH);
 
 //Set configurations
-TimeLineConfig.addOnClickListener(this);
+mFragment.addOnClickListener(this);
 
 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 transaction.replace(R.id.container, mFragment);
