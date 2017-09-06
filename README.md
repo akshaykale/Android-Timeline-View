@@ -126,7 +126,7 @@ public class ImageLoad implements ImageLoadingEngine {
 }
 ```
 And before loading the fragment into the container add following line of code.<br>
-```TimeLineConfig.setImageLoadEngine(new ImageLoad(getApplicationContext()));```
+```mFragment.setImageLoadEngine(new ImageLoad(getApplicationContext()));```
 
 ### Configurations
 
