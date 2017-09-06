@@ -70,6 +70,16 @@ private ArrayList<TimelineObject> loadDataInTimeline() {
 ```
 <br>
 
+#### Load single object into timeline using ``` addSingleObject() ``` function
+
+```
+TestO object = new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg");
+
+mFragment.addSingleObject(object, TimelineGroupType.DAY);
+```
+
+<br>
+
 #### TestO.java <br>
 
 Every data object must implement ```TimelineObject``` and override the methods and return valid value.
