@@ -14,7 +14,7 @@ Add following to application level ```build.gradle``` file<br>
 dependencies {
     //...
 
-    compile 'com.akshaykale.android:android-timeline-view:1.1'
+    compile 'com.akshaykale.android:android-timeline-view:2.1'
 
     //...
 }
