@@ -19,6 +19,7 @@ import com.akshaykale.swipetimeline.TimelineGroupType;
 import com.akshaykale.swipetimeline.TimelineObject;
 import com.akshaykale.swipetimeline.TimelineObjectClickListener;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements TimelineObjectClickListener {
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements TimelineObjectCli
         ArrayList<TimelineObject> objs = loadDataInTimeline();
 
         //Set data
-        //mFragment.setData(objs, TimelineGroupType.DAY);
+        mFragment.setData(objs, TimelineGroupType.MONTH);
 
         //Set configurations
         mFragment.addOnClickListener(this);
@@ -65,15 +66,6 @@ public class MainActivity extends AppCompatActivity implements TimelineObjectCli
 
         //Load frag after configs and setting the data
         loadFragment(mFragment);
-
-        /*mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
-        mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ1", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
-        mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ2", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
-        mFragment.addSingleObject(new TestO(Long.parseLong("1181196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
-        mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
-        mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
-        mFragment.addSingleObject(new TestO(Long.parseLong("1581196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
-*/
     }
 
     private ArrayList<TimelineObject> loadDataInTimeline() {
@@ -112,7 +104,11 @@ public class MainActivity extends AppCompatActivity implements TimelineObjectCli
         int id = item.getItemId();
         //loadFragment(null);
         if (id == R.id.action_add) {
-            mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+            long offset = Timestamp.valueOf("2016-01-01 00:00:00").getTime();
+            long end = Timestamp.valueOf("2017-01-01 00:00:00").getTime();
+            long diff = end - offset + 1;
+            Timestamp rand = new Timestamp(offset + (long)(Math.random() * diff));
+            mFragment.addSingleObject(new TestO(rand.getTime(), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.MONTH);
             //loadFragment(mFragment);
             return true;
         }
