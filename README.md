@@ -42,8 +42,8 @@ Add a container to load the fragment.<br>
 #### MainActivity.java
 
 ```
-// instantiate the SwipeTimelineFragment
-SwipeTimelineFragment mFragment = new SwipeTimelineFragment();
+// instantiate the TimelineFragment
+TimelineFragment mFragment = new TimelineFragment();
 
 //Set data
 mFragment.setData(loadData(), TimelineGroupType.MONTH);
