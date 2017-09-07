@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements TimelineObjectCli
         ArrayList<TimelineObject> objs = loadDataInTimeline();
 
         //Set data
-        mFragment.setData(objs, TimelineGroupType.DAY);
+        //mFragment.setData(objs, TimelineGroupType.DAY);
 
         //Set configurations
         mFragment.addOnClickListener(this);
@@ -66,14 +66,14 @@ public class MainActivity extends AppCompatActivity implements TimelineObjectCli
         //Load frag after configs and setting the data
         loadFragment(mFragment);
 
-        mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+        /*mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
         mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ1", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
         mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ2", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
         mFragment.addSingleObject(new TestO(Long.parseLong("1181196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
         mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
         mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
         mFragment.addSingleObject(new TestO(Long.parseLong("1581196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
-
+*/
     }
 
     private ArrayList<TimelineObject> loadDataInTimeline() {
@@ -110,8 +110,12 @@ public class MainActivity extends AppCompatActivity implements TimelineObjectCli
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        loadFragment(null);
-
+        //loadFragment(null);
+        if (id == R.id.action_add) {
+            mFragment.addSingleObject(new TestO(Long.parseLong("1481196400000"), "ZZZ", "http://www.pics4learning.com/images/categories/cat-biome-360.jpg"),TimelineGroupType.DAY);
+            //loadFragment(mFragment);
+            return true;
+        }
        /* if (id == R.id.action_date) {
             TimeLineConfig.setData(loadDataInTimeline(), TimelineGroupType.DAY);
             loadFragment(mFragment);

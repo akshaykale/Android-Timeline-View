@@ -47,6 +47,8 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
     ArrayList<String> list;
     Context context;
 
+    HorizontalRecyclerViewAdapter horizontalRecyclerViewAdapter;
+
     public VerticalRecyclerViewAdapter(Context context, ArrayList<String> list) {
         this.list = list;
         this.context = context;
@@ -63,7 +65,7 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
     public void onBindViewHolder(VerticalRecyclerViewHolder holder, int position) {
         holder.time.setText(TimeLineConfig.headerList.get(position));
 
-        HorizontalRecyclerViewAdapter horizontalRecyclerViewAdapter = new HorizontalRecyclerViewAdapter(TimeLineConfig.timelineObjMap.get(TimeLineConfig.headerList.get(position)));
+        horizontalRecyclerViewAdapter = new HorizontalRecyclerViewAdapter(TimeLineConfig.timelineObjMap.get(TimeLineConfig.headerList.get(position)));
         holder.recyclerView.setAdapter(horizontalRecyclerViewAdapter);
 
     }
@@ -72,7 +74,6 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
     public int getItemCount() {
         return TimeLineConfig.headerList.size();
     }
-
 
     public class VerticalRecyclerViewHolder extends RecyclerView.ViewHolder {
 
@@ -104,8 +105,13 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
             recyclerView.setLayoutManager(recyclerViewLayoutManager);
             LinearLayoutManager horizontalLinearLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
             recyclerView.setLayoutManager(horizontalLinearLayoutManager);
-
-
         }
+    }
+
+    public void notifyDataSetChangedToHorizontalView() {
+        if (horizontalRecyclerViewAdapter == null){
+            return;
+        }
+        horizontalRecyclerViewAdapter.notifyDataSetChanged();
     }
 }

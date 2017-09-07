@@ -17,4 +17,10 @@
         android:orderInCategory="100"
         android:title="Year"
         app:showAsAction="never" />-->
+
+    <item
+        android:id="@+id/action_add"
+        android:orderInCategory="100"
+        android:title="Add"
+        app:showAsAction="always" />
 </menu>

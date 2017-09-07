@@ -90,8 +90,10 @@ public class TimelineFragment extends Fragment{
 
     public void addSingleObject(TimelineObject data, TimelineGroupType type){
         TimeLineConfig.addObject(data,type);
-        if (verticalRecyclerViewAdapter!=null)
+        if (verticalRecyclerViewAdapter!=null) {
             verticalRecyclerViewAdapter.notifyDataSetChanged();
+            verticalRecyclerViewAdapter.notifyDataSetChangedToHorizontalView();
+        }
     }
 
     public void clearData(){
