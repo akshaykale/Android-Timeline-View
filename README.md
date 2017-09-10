@@ -116,9 +116,6 @@ For Image loading this library uses Picasso, But you can use any library you pre
 For this, create a class ```ImageLoad``` which  ```implements ImageLoadingEngine``` 
 ```
 public class ImageLoad implements ImageLoadingEngine {
-    Context context;
-    public ImageLoad(Context context) { this.context = context; }
-    
     @Override
     public void onLoadImage(ImageView imageView, String uri) {
           // Use any library you prefer to load the image into the view
