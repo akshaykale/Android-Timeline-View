@@ -88,6 +88,11 @@ public class HorizontalRecyclerViewAdapter extends RecyclerView.Adapter<Horizont
         return list.size();
     }
 
+    @Override
+    public void onViewRecycled(HorizontalRecyclerViewHolder holder) {
+        holder.imageView.setImageDrawable(null);
+        super.onViewRecycled(holder);
+    }
 
     public class HorizontalRecyclerViewHolder extends RecyclerView.ViewHolder {
 
