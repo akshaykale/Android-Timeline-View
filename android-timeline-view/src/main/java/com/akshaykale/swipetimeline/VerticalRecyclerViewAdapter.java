@@ -41,7 +41,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 * */
 
-public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRecyclerViewAdapter.VerticalRecyclerViewHolder> {
+class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRecyclerViewAdapter.VerticalRecyclerViewHolder> {
 
 
     ArrayList<String> list;
@@ -69,6 +69,8 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
         holder.recyclerView.setAdapter(horizontalRecyclerViewAdapter);
 
     }
+
+
 
     @Override
     public int getItemCount() {

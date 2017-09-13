@@ -40,7 +40,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 * */
 
-public class HorizontalRecyclerViewAdapter extends RecyclerView.Adapter<HorizontalRecyclerViewAdapter.HorizontalRecyclerViewHolder> {
+class HorizontalRecyclerViewAdapter extends RecyclerView.Adapter<HorizontalRecyclerViewAdapter.HorizontalRecyclerViewHolder> {
 
 
     ArrayList<TimelineObject> list = new ArrayList<>();
@@ -88,6 +88,11 @@ public class HorizontalRecyclerViewAdapter extends RecyclerView.Adapter<Horizont
         return list.size();
     }
 
+    @Override
+    public void onViewRecycled(HorizontalRecyclerViewHolder holder) {
+        holder.imageView.setImageDrawable(null);
+        super.onViewRecycled(holder);
+    }
 
     public class HorizontalRecyclerViewHolder extends RecyclerView.ViewHolder {
 
