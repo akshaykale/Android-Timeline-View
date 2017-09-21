@@ -15,8 +15,6 @@ dependencies {
     //...
 
     compile 'com.akshaykale.android:android-timeline-view:2.1'
-
-    //...
 }
 ```
 
