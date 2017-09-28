@@ -117,6 +117,7 @@ public class ImageLoad implements ImageLoadingEngine {
     @Override
     public void onLoadImage(ImageView imageView, String uri) {
           // Use any library you prefer to load the image into the view
+          // For Ex: Glide, Picasso, UIL, etc.
     }
 }
 ```
