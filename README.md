@@ -7,6 +7,14 @@ Android timeline to display horizontal sliding cards in recycler view, group by 
 
 <br>
 
+## Apps using the library: 
+
+* Gourmet (http://thegourmet.app) [Playstore](https://play.google.com/store/apps/details?id=com.akapps.gourmet) 
+
+PS: Please let me know if you are using this library in your app to list here. email: ark.akshaykale@gmail.com)
+
+<br>
+
 ### Install
 
 Add following to application level ```build.gradle``` file<br>
